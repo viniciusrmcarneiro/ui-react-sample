@@ -1,0 +1,25 @@
+.container-waiting-view
+    .waiting-view
+        display flex
+        align-items center
+        justify-content center
+
+        background rgba(0,0,0,0.5)
+
+        position fixed
+        left 0
+        top 0
+        bottom 0
+        right 0
+
+        z-index 999
+        .text
+            animation NAME-YOUR-ANIMATION 2s infinite
+            color white
+    .container-waiting-blur
+        filter blur(1px) grayscale(10%)
+        transition filter 0.5s
+
+@keyframes NAME-YOUR-ANIMATION
+  0%,100%   { transform: scale(1); }
+  50% { transform: scale(1.1) }

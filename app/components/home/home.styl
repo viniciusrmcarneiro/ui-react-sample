@@ -1,0 +1,51 @@
+$edges-site = 50px
+
+edge-fixed()
+    position fixed
+    height $edges-site
+
+    left 0px
+    right 0px
+
+:local(.header),:local(.footer)
+    display flex
+    align-items center
+    justify-content center
+    height $edges-site
+
+:local(.footer)
+    flex-direction column
+    background rgba(0,230,255, 0.5)
+
+:local(.header)
+    edge-fixed()
+    top 0px
+    background rgba(0,255,0, 0.7)
+
+    font-weight 900
+    font-size large
+
+:local(.middle)
+    margin $edges-site auto auto auto
+    min-height "calc(100vh - (%s * 2))" % $edges-site
+    display flex
+    flex-direction column
+    align-items center
+    justify-content center
+    background rgba(255,255,0, 0.2)
+
+:local(.title)
+    font-size 36px
+
+:local(.home-line)
+    margin 20px
+    text-align center
+
+@media only screen and (min-height 370px)
+    :local(.footer)
+        edge-fixed()
+        bottom 0px
+@media only screen and (min-width 768px)
+    :local(.header)
+        justify-content flex-start
+        padding-left 40px

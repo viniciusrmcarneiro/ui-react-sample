@@ -1,0 +1,42 @@
+body.modal-open > div[aria-hidden="true"]
+    filter blur(0.5px) grayscale(50%)
+    // I don't know why, but firefox needs it
+    position fixed
+    left 0
+    right 0
+    bottom 0
+    top 0
+
+body.modal-open
+    .modal-footer
+        border-top none
+        margin-bottom 20px
+    .modal-header
+        border-bottom none
+        position relative
+        margin-bottom 20px
+        &:after
+            content ''
+            width 60px
+            height 2px
+            left calc((100% - 60px) / 2)
+            background lightgray
+            position absolute
+            bottom 0
+
+    .modal-title
+        text-align center
+        font-weight 900
+    .modal.vertical-center
+        display flex
+        height 100%
+        .modal-dialog
+            margin auto
+            width 95%
+
+
+@media only screen and (min-width 768px)
+    body.modal-open .modal.vertical-center .modal-dialog.modal-sm
+        width 360px
+
+
